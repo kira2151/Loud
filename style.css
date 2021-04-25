@@ -1,0 +1,14 @@
+/*  CSS Document
+
+Theme Name: Loud Style
+Template: astra
+Author: gruppe 22
+Version: 1.0.5
+Description: Stylish Child Theme for Radio Loud
+*/
+
+.podcastcontainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    object-fit: cover;
+}
