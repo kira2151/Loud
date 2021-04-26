@@ -28,15 +28,20 @@ get_header(); ?>
 <div id="primary" <?php astra_primary_class(); ?>>
 
     <!------ HERE STARTER MIN KODE ---->
-    <section id="primary" class="content-area">
+    <section id="primary" class="content-area-single-podcast">
         <main id=liste class="site-main">
 
             <article class="podcast">
-                <h4 class="title"></h4>
-                <img src="" alt="" class="billeder">
-                <div>
-                    <p class="lang_beskrivelse"></p>
-                    <p class="genre"></p>
+                <img src="" alt="" class="coverbillede">
+                <div class="tilbage_til_oversigtDiv">
+                    <button class="tilbage_til_oversigt">Tilbage</button>
+                </div>
+                <h5 class="podcast_navn"></h5>
+                <p class="lang_beskrivelse"></p>
+                <p class="vaerter">Vært/værter: </p>
+                <p class="producenter">Producent/producenter:</p>
+                <div class="filtreringsDiv">
+                    <button class="filtreringsKnap">Filtrér</button>
                 </div>
             </article>
         </main>
@@ -54,10 +59,16 @@ get_header(); ?>
             }
 
             function visPodcasts() {
-                document.querySelector(".title").textContent = podcast.title.rendered;
-                document.querySelector(".billeder").src = podcast.billeder.guid;
+                document.querySelector(".podcast_navn").textContent = podcast.title.rendered;
+                document.querySelector(".coverbillede").src = podcast.billeder.guid;
                 document.querySelector(".lang_beskrivelse").textContent = podcast.lang_beskrivelse;
-                document.querySelector(".genre").textContent = podcast.genre;
+                document.querySelector(".vaerter").textContent += ` ${podcast.vaerter}`;
+                document.querySelector(".producenter").textContent += ` ${podcast.producenter}`;
+                document.querySelector(".tilbage_til_oversigt").addEventListener("click", tilbageTilPodcastOversigt);
+            }
+
+            function tilbageTilPodcastOversigt() {
+                history.back();
             }
 
             getJson();
