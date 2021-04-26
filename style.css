@@ -13,14 +13,6 @@ Description: Stylish Child Theme for Radio Loud
     object-fit: cover;
 }
 
-body {
-    background-color: red;
-}
-
-.section-inner {
-    padding: 0px;
-    margin-left: 300px;
-    margin-right: 90px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+.elementor-element .elementor-widget-container {
+    color: red;
 }
