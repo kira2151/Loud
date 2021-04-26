@@ -16,3 +16,11 @@ Description: Stylish Child Theme for Radio Loud
 body {
     background-color: red;
 }
+
+.section-inner {
+    padding: 0px;
+    margin-left: 90px;
+    margin-right: 90px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
