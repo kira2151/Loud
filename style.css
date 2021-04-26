@@ -12,3 +12,7 @@ Description: Stylish Child Theme for Radio Loud
     grid-template-columns: repeat(4, 1fr);
     object-fit: cover;
 }
+
+main.site-main {
+    background-color: red;
+}
