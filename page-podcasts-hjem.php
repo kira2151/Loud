@@ -38,8 +38,9 @@ get_header(); ?>
     <template>
         <article>
             <div>
-                <img src="" alt="" class="billeder">
                 <h4 class="title"></h4>
+                <img src="" alt="" class="billeder">
+                <p class="lang_beskrivelse"></p>
             </div>
         </article>
     </template>
@@ -70,6 +71,7 @@ get_header(); ?>
                 podcasts.forEach(podcast => {
                     let klon = temp.cloneNode(true).content;
                     klon.querySelector(".title").textContent = podcast.title.rendered;
+                    klon.querySelector(".lang_beskrivelse").textContent = podcast.lang_beskrivelse;
                     klon.querySelector(".billeder").src = podcast.billeder.guid;
                     klon.querySelector("article").addEventListener("click", () => {
                         location.href = podcast.link;
