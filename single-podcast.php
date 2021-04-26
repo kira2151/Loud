@@ -32,10 +32,11 @@ get_header(); ?>
         <main id=liste class="site-main">
 
             <article class="podcast">
+                <h4 class="title"></h4>
                 <img src="" alt="" class="billeder">
                 <div>
-                    <h4 class="title"></h4>
-                    <p class="beskrivelse"></p>
+                    <p class="lang_beskrivelse"></p>
+                    <p class="genre"></p>
                 </div>
             </article>
         </main>
@@ -55,7 +56,8 @@ get_header(); ?>
             function visPodcasts() {
                 document.querySelector(".title").textContent = podcast.title.rendered;
                 document.querySelector(".billeder").src = podcast.billeder.guid;
-                document.querySelector(".beskrivelse").textContent = podcast.beskrivelse;
+                document.querySelector(".lang_beskrivelse").textContent = podcast.lang_beskrivelse;
+                document.querySelector(".genre").textContent = podcast.genre;
             }
 
             getJson();
