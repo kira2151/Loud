@@ -7,9 +7,12 @@ Version: 1.0.3
 Description: Stylish Child Theme for Radio Loud
 */
 .podcastcontainer {
+    display: flex;
+    /*
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     object-fit: cover;
+*/
 }
 
 article {
