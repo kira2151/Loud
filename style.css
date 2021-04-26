@@ -6,11 +6,6 @@ Author: gruppe 22
 Version: 1.0.3
 Description: Stylish Child Theme for Radio Loud
 */
-
-#main > section > article:nth-child(1) > div > img {
-    width: 100px;
-}
-
 .podcastcontainer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
