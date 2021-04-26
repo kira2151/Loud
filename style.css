@@ -16,3 +16,7 @@ Description: Stylish Child Theme for Radio Loud
 .elementor-element .elementor-widget-container {
     color: red;
 }
+
+.elementor-2 .elementor-element.elementor-element-ec921cd .elementor-heading-title {
+    font-size: 100px;
+}
