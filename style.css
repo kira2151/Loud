@@ -6,35 +6,172 @@ Author: gruppe 22
 Version: 1.0.5
 Description: Stylish Child Theme for Radio Loud
 */
+.podcast_navn,
+.lang_beskrivelse,
+.vaerter,
+.producenter {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 .podcastcontainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 3em;
-    padding: 3em;
-    /*    display: flex;*/
-    /*
+    display: flex;
+}
+
+.entry-title {
+    display: none;
+}
+
+.navigation.post-navigation {
+    display: none;
+}
+
+.coverbillede {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.vaerter {
+    margin-bottom: 0px;
+    color: #FF3E3E;
+    font-weight: bold;
+}
+
+.producenter {
+    margin-top: 0px;
+    color: #FFC500;
+    font-weight: bold;
+}
+
+.tilbage_til_oversigtDiv {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 30px;
+}
+
+.tilbage_til_oversigt {
+    background-color: #F1F1F1;
+    color: #000000;
+}
+
+.tilbage_til_oversigt:hover {
+    background-color: #FFC500;
+    color: #FFFFFF;
+}
+
+.podcast_navn {
+    margin-bottom: 30px;
+    margin-top: 120px;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #000000;
+    font-weight: bold;
+    border-bottom: 5px solid #FF3E3E;
+    width: 250px;
+}
+
+.lang_beskrivelse {
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.filtreringsDiv {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 50px;
+    justify-content: flex-end;
+}
+
+.filtreringsKnap {
+    display: flex;
+    background-color: #F1F1F1;
+    color: #000000;
+}
+
+.filtreringsKnap:hover {
+    background-color: #FFC500;
+    color: #FFFFFF;
+}
+
+@media screen and (min-width: 1500px) {
+
+    .podcast_navn,
+    .lang_beskrivelse,
+    .vaerter,
+    .producenter {
+        margin-left: 1000x;
+        margin-right: 1000px;
+    }
+
+    @media screen and (min-width: 600px) {
+
+        .podcast_navn,
+        .lang_beskrivelse,
+        .vaerter,
+        .producenter {
+            margin-left: 395px;
+            margin-right: 395px;
+        }
+
+        .coverbillede {
+            height: 600px;
+        }
+
+        .tilbage_til_oversigtDiv {
+            margin-left: 395px;
+            margin-right: 395px;
+        }
+
+        .filtreringsDiv {
+            margin-left: 395px;
+            margin-right: 395px;
+            margin-top: 150px;
+        }
+
+        .podcast_navn {
+            font-size: 30px;
+            width: 400px;
+        }
+    }
+
+    .podcastcontainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 3em;
+        padding: 3em;
+        /*    display: flex;*/
+        /*
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     object-fit: cover;
 */
-}
+    }
 
-article {
-    grid-gap: 15px;
-}
+    article {
+        grid-gap: 15px;
+    }
 
-#filtrering {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 5px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+    #filtrering {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 5px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 
-button {
-    background-color: black;
-}
+    button {
+        background-color: black;
+    }
 
-.title {
-    background-color: #FFC500;
-}
+    .title {
+        background-color: #FFC500;
+    }
