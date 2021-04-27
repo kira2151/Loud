@@ -44,6 +44,7 @@ get_header(); ?>
 
     <section id="primary" class="content-area">
 
+        <nav id="filtrering"><button data-podcast="alle">Alle</button></nav>
         <main id="main" class="site-main">
             <section class="podcastcontainer">
             </section>
@@ -51,13 +52,41 @@ get_header(); ?>
 
         <script>
             let podcasts;
+            let categories;
+            let filterPodcast = "alle";
+
             const dbUrl = "http://kiraberthelsen.com/Loud/wp-json/wp/v2/podcast?per_page=100";
+            const catUrl = "http://kiraberthelsen.com/Loud/wp-json/wp/v2/categories";
 
 
             async function getJson() {
                 const data = await fetch(dbUrl);
+                const catdata = await fetch(catUrl);
                 podcasts = await data.json();
-                console.log(podcasts)
+                categories = await catdata.json();
+                console.log(categories)
+                visPodcasts();
+                opretknapper();
+            }
+
+            function opretknapper() {
+                categories.forEach(cat => {
+                    document.querySelector("#filtrering").innerHTML += `<button class="filter" data-podcast="${cat.id}">${cat.name}</button>`
+                })
+
+                addEventListenersToButtons();
+            }
+
+            function addEventListenersToButtons() {
+                document.querySelectorAll("#filtrering button").forEach(elm => {
+                    elm.addEventListener("click", filtrering);
+                })
+            };
+
+            function filtrering() {
+                filterPodcast = this.dataset.podcast;
+                console.log(filterPodcast);
+
                 visPodcasts();
             }
 
@@ -65,14 +94,17 @@ get_header(); ?>
             function visPodcasts() {
                 let temp = document.querySelector("template");
                 let container = document.querySelector(".podcastcontainer")
+                container.innerHTML = "";
                 podcasts.forEach(podcast => {
-                    let klon = temp.cloneNode(true).content;
-                    klon.querySelector(".title").textContent = podcast.title.rendered;
-                    klon.querySelector(".billeder").src = podcast.billeder.guid;
-                    klon.querySelector("article").addEventListener("click", () => {
-                        location.href = podcast.link;
-                    })
-                    container.appendChild(klon);
+                    if (filterPodcast == "alle" || podcast.categories.includes(parseInt(filterPodcast))) {
+                        let klon = temp.cloneNode(true).content;
+                        klon.querySelector(".title").textContent = podcast.title.rendered;
+                        klon.querySelector(".billeder").src = podcast.billeder.guid;
+                        klon.querySelector("article").addEventListener("click", () => {
+                            location.href = podcast.link;
+                        })
+                        container.appendChild(klon);
+                    }
                 })
             }
 
