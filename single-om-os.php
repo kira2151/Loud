@@ -28,14 +28,18 @@ get_header(); ?>
 <div id="primary" <?php astra_primary_class(); ?>>
 
     <!------ HERE STARTER MIN KODE ---->
-    <section id="primary" class="content-area">
+    <section id="primary" class="content-area-single-vrt">
         <main id=liste class="site-main">
 
             <article class="vrt">
-                <img src="" alt="" class="billeder">
-                <div>
-                    <h4 class="title"></h4>
-                    <p class="beskrivelse"></p>
+                <img src="" alt="" class="coverbillede">
+                <div class="tilbage_til_oversigtDiv">
+                    <button class="tilbage_til_oversigt">Tilbage</button>
+                </div>
+                <h5 class="title"></h5>
+                <p class="beskrivelse"></p>
+                <div class="filtreringsDiv">
+                    <button class="filtreringsKnap">Filtrér</button>
                 </div>
             </article>
         </main>
@@ -49,12 +53,12 @@ get_header(); ?>
             async function getJson() {
                 const data = await fetch(dbUrl);
                 vrt = await data.json();
-                visVærter();
+                visVaerter();
             }
 
-            function visVærter() {
+            function visVaerter() {
                 document.querySelector(".title").textContent = vrt.title.rendered;
-                document.querySelector(".billeder").src = vrt.billeder.guid;
+                document.querySelector(".coverbillede").src = vrt.billeder.guid;
                 document.querySelector(".beskrivelse").textContent = vrt.beskrivelse;
             }
 

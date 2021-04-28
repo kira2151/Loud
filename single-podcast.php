@@ -27,22 +27,32 @@ get_header(); ?>
 
 <div id="primary" <?php astra_primary_class(); ?>>
 
+
     <!------ HERE STARTER MIN KODE ---->
+
     <section id="primary" class="content-area-single-podcast">
         <main id=liste class="site-main">
 
             <article class="podcast">
-                <img src="" alt="" class="coverbillede">
-                <div class="tilbage_til_oversigtDiv">
-                    <button class="tilbage_til_oversigt">Tilbage</button>
+                <div class="grid">
+                    <div class="img_container">
+                        <img src="" alt="" class="coverbillede">
+                    </div>
+                    <div class="tilbage_til_oversigtDiv">
+                        <h5 class="podcast_navn"></h5>
+                        <p class="lang_beskrivelse"></p>
+                        <p class="vaerter">Vært/værter: </p>
+                        <p class="producenter">Producent/producenter:</p>
+                        <button class="tilbage_til_oversigt">Tilbage</button>
+                    </div>
+                    <div class="tilbage_til_oversigtDiv">
+                    </div>
                 </div>
-                <h5 class="podcast_navn"></h5>
-                <p class="lang_beskrivelse"></p>
-                <p class="vaerter">Vært/værter: </p>
-                <p class="producenter">Producent/producenter:</p>
+                <!--
                 <div class="filtreringsDiv">
                     <button class="filtreringsKnap">Filtrér</button>
                 </div>
+-->
             </article>
         </main>
 
@@ -78,6 +88,7 @@ get_header(); ?>
 
 
     <!------ HERE SLUTTER MIN KODE ---->
+
 
     <?php astra_primary_content_top(); ?>
 
