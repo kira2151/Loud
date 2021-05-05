@@ -270,3 +270,77 @@ button:hover {
     grid-gap: 3em;
     padding: 3em;
 }
+
+/*************** CSS TIL SINGLE OM OS/VRT SIDEN MOBIL  ***************/
+
+#liste > article > div.img_vrt_container > img {
+    border-radius: 50%;
+
+}
+
+.padding_container {
+    background-color: black;
+    padding-top: 90px;
+}
+
+#liste > article > div.img_vrt_container {
+    background-color: black;
+    padding-top: 90px;
+}
+
+#liste > article > div.img_vrt_container > div > h5 {
+    background-color: transparent;
+    margin-bottom: 200px;
+    color: #FFC500;
+    margin: 0 auto;
+    font-size: 40px;
+    padding-top: 30px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+#liste > article > p {
+    margin-left: 30px;
+    margin-left: 30px;
+    margin-top: 50px;
+}
+
+/*
+.title_container {
+    margin: 0 auto;
+}
+*/
+
+
+
+
+
+
+/*************** CSS TIL SINGLE OM OS/VRT SIDEN 800px  ***************/
+
+@media screen and (min-width: 800px) {
+
+    #liste > article > div.img_vrt_container > img {
+        border-radius: 50%;
+        height: 350px;
+        width: 350px;
+    }
+
+    #liste > article > div.img_vrt_container {
+        background-color: black;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #liste > article > p {
+        max-width: 900px;
+        margin: 0 auto;
+        padding-top: 60px;
+    }
+
+    #liste > article > div.tilbage_til_oversigtDiv {
+        margin-top: 50px;
+    }
+
+}

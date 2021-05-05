@@ -25,6 +25,9 @@ get_header(); ?>
 
 <?php endif ?>
 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+
 <div id="primary" <?php astra_primary_class(); ?>>
 
     <!------ HERE STARTER MIN KODE ---->
@@ -32,15 +35,26 @@ get_header(); ?>
         <main id=liste class="site-main">
 
             <article class="vrt">
-                <img src="" alt="" class="coverbillede">
+                <div class="padding_container">
+
+                </div>
+                <div class="img_vrt_container">
+                    <img src="" alt="" class="coverbillede">
+                    <div class="title_container">
+                        <h5 class="title"></h5>
+                    </div>
+                </div>
+                <p class="beskrivelse"></p>
+
+                <!--
+                <div class="filtreringsDiv">
+                                        <button class="filtreringsKnap">Filtrér</button>
+                </div>
+-->
                 <div class="tilbage_til_oversigtDiv">
                     <button class="tilbage_til_oversigt">Tilbage</button>
                 </div>
-                <h5 class="title"></h5>
-                <p class="beskrivelse"></p>
-                <div class="filtreringsDiv">
-                    <button class="filtreringsKnap">Filtrér</button>
-                </div>
+
             </article>
         </main>
 
